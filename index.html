@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HamroBazar.com - Anniversary Sale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3 {
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .sale-banner {
+            background: #ff4757;
+            padding: 20px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 8px;
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        img {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            animation: slideIn 1s forwards;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 15px;
+            color: white;
+        }
+        th {
+            background: #007bff;
+        }
+        td:first-child { background: #6c5ce7; }
+        td:last-child { background: #ff7f50; }
+        tr:hover td { background: #fdcb6e !important; color: black; }
+        .countdown {
+            font-size: 22px;
+            font-weight: bold;
+            color: #fff;
+            margin-top: 20px;
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #fff, 0 0 20px #ff7f50, 0 0 30px #ff7f50; }
+            100% { text-shadow: 0 0 20px #fff, 0 0 30px #ff7f50, 0 0 40px #ff7f50; }
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="sale-banner">SALE !!! Anniversary Offer - 25% Off</h1>
+    <h3 class="countdown">Offer Ends In: <span id="timer"></span></h3>
+    <img src="/images/lenovo.jpg" height="300" width="300" alt="Lenovo Laptop">
+    
+    <!-- New Image with  link -->
+    <a href="https://www.gadgetbytenepal.com/cat/laptops/lenovo/loq/" target="_blank">
+        <img src="/images/ooo.jpg" height="50" width="50" alt="Lenovo LOQ Laptop Offer">
+    </a>
+
+    <hr>
+    <table>
+        <tr>
+            <th>Model</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Lenovo LOQ 2024 (Intel i5-12450HX, RTX 2050, 8GB, 256GB, 15.6″ FHD 144Hz)</td>
+            <td>Rs.92,999</td>
+        </tr>
+        <tr>
+            <td>Lenovo LOQ 2024 (AMD Ryzen 5 7235HS, RTX 3050, 12GB, 512GB, 15.6″ FHD 144Hz)</td>
+            <td>Rs.93,000</td>
+        </tr>
+        <tr>
+            <td>Lenovo LOQ 2024 (Intel i5-12450HX, RTX 2050, 12GB, 512GB, 15.6″ FHD 144Hz)</td>
+            <td>Rs.99,000</td>
+        </tr>
+        <tr>
+            <td>Lenovo LOQ 2024 (Intel i5-12450HX, RTX 4050, 24GB, 512GB, 15.6″ FHD 144Hz)</td>
+            <td>Rs.113,000</td>
+        </tr>
+        <tr>
+            <td>Lenovo LOQ 2024 (Intel i5-13450HX, RTX 4050, 16GB, 1TB, 15.6″ FHD 144Hz)</td>
+            <td>Rs.120,000</td>
+        </tr>
+    </table>
+    <div class="footer">Made By Nishan Dangi</div>
+    <script>
+        function startCountdown(duration) {
+            let countdown = duration;
+            let display = document.getElementById("timer");
+            setInterval(function () {
+                let days = Math.floor(countdown / (60 * 60 * 24));
+                let hours = Math.floor((countdown % (60 * 60 * 24)) / (60 * 60));
+                let minutes = Math.floor((countdown % (60 * 60)) / 60);
+                let seconds = countdown % 60;
+                display.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                if (countdown > 0) countdown--;
+            }, 1000);
+        }
+        startCountdown(5 * 24 * 60 * 60);
+    </script>
+</body>
+</html>
